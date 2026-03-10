@@ -69,7 +69,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="/NolenSchnabelResume.pdf"
+          href="./NolenSchnabelResume.pdf"
           target="_blank"
           rel="noreferrer"
           style={{
