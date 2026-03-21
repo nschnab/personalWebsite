@@ -30,9 +30,20 @@ const skillCategories = [
   {
     label: 'Certifications',
     icon: '✦',
-    items: [
-      'Associate ServiceNow Administrator',
-      'Postman API Student Expert',
+    certs: [
+      {
+        name: 'Associate ServiceNow Administrator',
+        issuer: 'ServiceNow University',
+        link: 'https://learning.servicenow.com/lxp/en/pages/nl-public-resume?id=nl_public&user=nschnab729176874',
+        color: '#82b5a0',
+        abbr: 'SN',
+      },
+      {
+        name: 'API Student Expert',
+        issuer: 'Postman',
+        link: `${import.meta.env.BASE_URL}Postman badge.png`,
+        image: `${import.meta.env.BASE_URL}Postman badge.png`,
+      },
     ],
   },
   {
@@ -101,34 +112,112 @@ export default function Skills() {
               <h3 style={{ color: '#1e2c34', fontSize: '1rem', fontWeight: 600 }}>{cat.label}</h3>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {cat.items.map(item => (
-                <span
-                  key={item}
-                  className="mono"
-                  style={{
-                    fontSize: '0.78rem',
-                    color: '#4a606a',
-                    background: '#f0ece2',
-                    border: '1px solid #c8d4d0',
-                    padding: '0.3rem 0.65rem',
-                    borderRadius: '4px',
-                    transition: 'color 0.15s, border-color 0.15s',
-                    cursor: 'default',
-                  }}
-                  onMouseEnter={e => {
-                    e.target.style.color = '#3a9080'
-                    e.target.style.borderColor = 'rgba(74, 168, 152, 0.4)'
-                  }}
-                  onMouseLeave={e => {
-                    e.target.style.color = '#4a606a'
-                    e.target.style.borderColor = '#c8d4d0'
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+            {cat.certs ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {cat.certs.map(cert => (
+                  <a
+                    key={cert.name}
+                    href={cert.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      padding: '0.6rem 0.75rem',
+                      borderRadius: '6px',
+                      border: '1px solid #c8d4d0',
+                      background: '#f0ece2',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.2s, box-shadow 0.2s',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.borderColor = 'rgba(74, 168, 152, 0.5)'
+                      e.currentTarget.style.boxShadow = '0 2px 10px rgba(74, 168, 152, 0.1)'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.borderColor = '#c8d4d0'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    {cert.image ? (
+                      <img
+                        src={cert.image}
+                        alt={cert.name}
+                        style={{
+                          width: '38px',
+                          height: '38px',
+                          borderRadius: '4px',
+                          objectFit: 'cover',
+                          flexShrink: 0,
+                          border: '1px solid #c8d4d0',
+                        }}
+                      />
+                    ) : (
+                      <span
+                        className="mono"
+                        style={{
+                          width: '38px',
+                          height: '38px',
+                          borderRadius: '4px',
+                          background: cert.color || 'rgba(74,168,152,0.12)',
+                          border: '1px solid rgba(74,168,152,0.3)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          color: '#1e2c34',
+                          flexShrink: 0,
+                          letterSpacing: '0.05em',
+                        }}
+                      >
+                        {cert.abbr}
+                      </span>
+                    )}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ color: '#1e2c34', fontSize: '0.82rem', fontWeight: 600, lineHeight: 1.3 }}>
+                        {cert.name}
+                      </div>
+                      <div className="mono" style={{ color: '#5e7d8c', fontSize: '0.72rem', marginTop: '2px' }}>
+                        {cert.issuer}
+                      </div>
+                    </div>
+                    <span style={{ color: '#4aa898', fontSize: '0.8rem', flexShrink: 0 }}>↗</span>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {cat.items.map(item => (
+                  <span
+                    key={item}
+                    className="mono"
+                    style={{
+                      fontSize: '0.78rem',
+                      color: '#4a606a',
+                      background: '#f0ece2',
+                      border: '1px solid #c8d4d0',
+                      padding: '0.3rem 0.65rem',
+                      borderRadius: '4px',
+                      transition: 'color 0.15s, border-color 0.15s',
+                      cursor: 'default',
+                    }}
+                    onMouseEnter={e => {
+                      e.target.style.color = '#3a9080'
+                      e.target.style.borderColor = 'rgba(74, 168, 152, 0.4)'
+                    }}
+                    onMouseLeave={e => {
+                      e.target.style.color = '#4a606a'
+                      e.target.style.borderColor = '#c8d4d0'
+                    }}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
