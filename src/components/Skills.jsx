@@ -48,7 +48,7 @@ export default function Skills() {
       id="skills"
       style={{
         padding: 'clamp(4rem, 10vw, 7rem) clamp(1.5rem, 8vw, 8rem)',
-        background: '#080810',
+        background: '#e8e4da',
       }}
     >
       <SectionHeader number="02" title="Skills & Certifications" />
@@ -65,18 +65,18 @@ export default function Skills() {
           <div
             key={cat.label}
             style={{
-              background: '#111827',
-              border: '1px solid #1e293b',
+              background: '#f8f5f0',
+              border: '1px solid #c8d4d0',
               borderRadius: '8px',
               padding: '1.75rem',
               transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'rgba(100, 255, 218, 0.35)'
-              e.currentTarget.style.boxShadow = '0 4px 20px rgba(100, 255, 218, 0.06)'
+              e.currentTarget.style.borderColor = 'rgba(74, 168, 152, 0.5)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(74, 168, 152, 0.1)'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.borderColor = '#1e293b'
+              e.currentTarget.style.borderColor = '#c8d4d0'
               e.currentTarget.style.boxShadow = 'none'
             }}
           >
@@ -84,21 +84,21 @@ export default function Skills() {
               <span
                 className="mono"
                 style={{
-                  color: '#64ffda',
+                  color: '#4aa898',
                   fontSize: '1.1rem',
-                  background: 'rgba(100, 255, 218, 0.08)',
+                  background: 'rgba(74, 168, 152, 0.08)',
                   width: '36px',
                   height: '36px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '6px',
-                  border: '1px solid rgba(100, 255, 218, 0.2)',
+                  border: '1px solid rgba(74, 168, 152, 0.25)',
                 }}
               >
                 {cat.icon}
               </span>
-              <h3 style={{ color: '#e2e8f0', fontSize: '1rem', fontWeight: 600 }}>{cat.label}</h3>
+              <h3 style={{ color: '#1e2c34', fontSize: '1rem', fontWeight: 600 }}>{cat.label}</h3>
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -108,21 +108,21 @@ export default function Skills() {
                   className="mono"
                   style={{
                     fontSize: '0.78rem',
-                    color: '#94a3b8',
-                    background: '#0d0d0d',
-                    border: '1px solid #1e293b',
+                    color: '#4a606a',
+                    background: '#f0ece2',
+                    border: '1px solid #c8d4d0',
                     padding: '0.3rem 0.65rem',
                     borderRadius: '4px',
                     transition: 'color 0.15s, border-color 0.15s',
                     cursor: 'default',
                   }}
                   onMouseEnter={e => {
-                    e.target.style.color = '#64ffda'
-                    e.target.style.borderColor = 'rgba(100, 255, 218, 0.3)'
+                    e.target.style.color = '#3a9080'
+                    e.target.style.borderColor = 'rgba(74, 168, 152, 0.4)'
                   }}
                   onMouseLeave={e => {
-                    e.target.style.color = '#94a3b8'
-                    e.target.style.borderColor = '#1e293b'
+                    e.target.style.color = '#4a606a'
+                    e.target.style.borderColor = '#c8d4d0'
                   }}
                 >
                   {item}
@@ -142,72 +142,52 @@ export default function Skills() {
           marginTop: '1.5rem',
         }}
       >
-        <div
-          style={{
-            background: '#111827',
-            border: '1px solid #1e293b',
-            borderRadius: '8px',
-            padding: '1.75rem',
-          }}
-        >
+        <div style={{ background: '#f8f5f0', border: '1px solid #c8d4d0', borderRadius: '8px', padding: '1.75rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
             <span
               className="mono"
               style={{
-                color: '#64ffda',
+                color: '#4aa898',
                 fontSize: '1.1rem',
-                background: 'rgba(100, 255, 218, 0.08)',
+                background: 'rgba(74, 168, 152, 0.08)',
                 width: '36px',
                 height: '36px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 borderRadius: '6px',
-                border: '1px solid rgba(100, 255, 218, 0.2)',
+                border: '1px solid rgba(74, 168, 152, 0.25)',
               }}
             >
               ◈
             </span>
-            <h3 style={{ color: '#e2e8f0', fontSize: '1rem', fontWeight: 600 }}>Education</h3>
+            <h3 style={{ color: '#1e2c34', fontSize: '1rem', fontWeight: 600 }}>Education</h3>
           </div>
-          <p style={{ color: '#e2e8f0', fontWeight: 600, fontSize: '0.95rem' }}>
-            B.S. Computer Science
-          </p>
-          <p className="mono" style={{ color: '#64ffda', fontSize: '0.85rem', marginTop: '4px' }}>
-            Clemson University
-          </p>
-          <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '4px' }}>
-            Expected May 2026 · Clemson, SC
-          </p>
+          <p style={{ color: '#1e2c34', fontWeight: 600, fontSize: '0.95rem' }}>B.S. Computer Science</p>
+          <p className="mono" style={{ color: '#4aa898', fontSize: '0.85rem', marginTop: '4px' }}>Clemson University</p>
+          <p style={{ color: '#5e7d8c', fontSize: '0.8rem', marginTop: '4px' }}>Expected May 2026 · Clemson, SC</p>
         </div>
 
-        <div
-          style={{
-            background: '#111827',
-            border: '1px solid #1e293b',
-            borderRadius: '8px',
-            padding: '1.75rem',
-          }}
-        >
+        <div style={{ background: '#f8f5f0', border: '1px solid #c8d4d0', borderRadius: '8px', padding: '1.75rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
             <span
               className="mono"
               style={{
-                color: '#64ffda',
+                color: '#e88278',
                 fontSize: '1.1rem',
-                background: 'rgba(100, 255, 218, 0.08)',
+                background: 'rgba(232, 130, 120, 0.08)',
                 width: '36px',
                 height: '36px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 borderRadius: '6px',
-                border: '1px solid rgba(100, 255, 218, 0.2)',
+                border: '1px solid rgba(232, 130, 120, 0.25)',
               }}
             >
               ★
             </span>
-            <h3 style={{ color: '#e2e8f0', fontSize: '1rem', fontWeight: 600 }}>Awards & Honors</h3>
+            <h3 style={{ color: '#1e2c34', fontSize: '1rem', fontWeight: 600 }}>Awards & Honors</h3>
           </div>
           <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', listStyle: 'none', padding: 0 }}>
             {[
@@ -215,8 +195,8 @@ export default function Skills() {
               '2nd Degree Black Belt – Kuk Sool Won',
               'Led self-defense workshop at local High School',
             ].map(item => (
-              <li key={item} style={{ color: '#94a3b8', fontSize: '0.88rem', display: 'flex', gap: '0.5rem' }}>
-                <span style={{ color: '#64ffda', flexShrink: 0 }}>›</span>
+              <li key={item} style={{ color: '#4a606a', fontSize: '0.88rem', display: 'flex', gap: '0.5rem' }}>
+                <span style={{ color: '#e88278', flexShrink: 0 }}>›</span>
                 {item}
               </li>
             ))}

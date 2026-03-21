@@ -14,11 +14,11 @@ export default function Contact() {
 
   const inputStyle = {
     width: '100%',
-    background: '#0d0d0d',
-    border: '1px solid #1e293b',
+    background: '#f0ece2',
+    border: '1px solid #c8d4d0',
     borderRadius: '6px',
     padding: '0.75rem 1rem',
-    color: '#e2e8f0',
+    color: '#1e2c34',
     fontSize: '0.9rem',
     fontFamily: 'inherit',
     outline: 'none',
@@ -30,7 +30,7 @@ export default function Contact() {
       id="contact"
       style={{
         padding: 'clamp(4rem, 10vw, 7rem) clamp(1.5rem, 8vw, 8rem)',
-        background: '#080810',
+        background: '#e8e4da',
       }}
     >
       <SectionHeader number="04" title="Get In Touch" />
@@ -46,27 +46,14 @@ export default function Contact() {
       >
         {/* Left: intro + links */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <p style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.75 }}>
-            I'm currently open to internship opportunities and new connections. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!
+          <p style={{ color: '#4a606a', fontSize: '1rem', lineHeight: 1.75 }}>
+            I'm currently open to full-time opportunities and new connections. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {[
-              {
-                icon: '✉',
-                label: 'nolen.schnabel@gmail.com',
-                href: 'mailto:nolen.schnabel@gmail.com',
-              },
-              {
-                icon: '⟁',
-                label: 'linkedin.com/in/nschnab',
-                href: 'https://www.linkedin.com/in/nschnab',
-              },
-              {
-                icon: '☎',
-                label: '864-986-2462',
-                href: 'tel:8649862462',
-              },
+              { icon: '✉', label: 'nolen.schnabel@gmail.com', href: 'mailto:nolen.schnabel@gmail.com' },
+              { icon: '⟁', label: 'linkedin.com/in/nschnab', href: 'https://www.linkedin.com/in/nschnab' },
             ].map(link => (
               <a
                 key={link.label}
@@ -77,27 +64,25 @@ export default function Contact() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.75rem',
-                  color: '#94a3b8',
+                  color: '#4a606a',
                   textDecoration: 'none',
                   fontSize: '0.9rem',
                   padding: '0.6rem 1rem',
                   borderRadius: '6px',
-                  border: '1px solid #1e293b',
-                  background: '#111827',
+                  border: '1px solid #c8d4d0',
+                  background: '#f8f5f0',
                   transition: 'color 0.2s, border-color 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.color = '#64ffda'
-                  e.currentTarget.style.borderColor = 'rgba(100, 255, 218, 0.3)'
+                  e.currentTarget.style.color = '#3a9080'
+                  e.currentTarget.style.borderColor = 'rgba(74, 168, 152, 0.4)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.color = '#94a3b8'
-                  e.currentTarget.style.borderColor = '#1e293b'
+                  e.currentTarget.style.color = '#4a606a'
+                  e.currentTarget.style.borderColor = '#c8d4d0'
                 }}
               >
-                <span className="mono" style={{ color: '#64ffda', fontSize: '1rem' }}>
-                  {link.icon}
-                </span>
+                <span className="mono" style={{ color: '#4aa898', fontSize: '1rem' }}>{link.icon}</span>
                 {link.label}
               </a>
             ))}
@@ -109,16 +94,16 @@ export default function Contact() {
           {submitted ? (
             <div
               style={{
-                background: '#111827',
-                border: '1px solid rgba(100, 255, 218, 0.3)',
+                background: '#f8f5f0',
+                border: '1px solid rgba(74, 168, 152, 0.4)',
                 borderRadius: '8px',
                 padding: '2rem',
                 textAlign: 'center',
               }}
             >
-              <div className="mono" style={{ color: '#64ffda', fontSize: '2rem', marginBottom: '1rem' }}>✓</div>
-              <p style={{ color: '#e2e8f0', fontWeight: 600 }}>Message prepared!</p>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginTop: '0.5rem' }}>
+              <div className="mono" style={{ color: '#4aa898', fontSize: '2rem', marginBottom: '1rem' }}>✓</div>
+              <p style={{ color: '#1e2c34', fontWeight: 600 }}>Message prepared!</p>
+              <p style={{ color: '#4a606a', fontSize: '0.875rem', marginTop: '0.5rem' }}>
                 Your email client should open. If not, email me directly at nolen.schnabel@gmail.com
               </p>
               <button
@@ -126,8 +111,8 @@ export default function Contact() {
                 style={{
                   marginTop: '1.5rem',
                   background: 'transparent',
-                  color: '#64ffda',
-                  border: '1px solid #64ffda',
+                  color: '#3a9080',
+                  border: '1px solid #4aa898',
                   padding: '0.5rem 1.25rem',
                   borderRadius: '4px',
                   cursor: 'pointer',
@@ -142,8 +127,8 @@ export default function Contact() {
             <form
               onSubmit={handleSubmit}
               style={{
-                background: '#111827',
-                border: '1px solid #1e293b',
+                background: '#f8f5f0',
+                border: '1px solid #c8d4d0',
                 borderRadius: '8px',
                 padding: '2rem',
                 display: 'flex',
@@ -152,9 +137,7 @@ export default function Contact() {
               }}
             >
               <div>
-                <label className="mono" style={{ color: '#64ffda', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>
-                  NAME
-                </label>
+                <label className="mono" style={{ color: '#3a9080', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>NAME</label>
                 <input
                   type="text"
                   required
@@ -162,14 +145,12 @@ export default function Contact() {
                   onChange={e => setForm({ ...form, name: e.target.value })}
                   style={inputStyle}
                   placeholder="Your name"
-                  onFocus={e => (e.target.style.borderColor = 'rgba(100, 255, 218, 0.5)')}
-                  onBlur={e => (e.target.style.borderColor = '#1e293b')}
+                  onFocus={e => (e.target.style.borderColor = 'rgba(74, 168, 152, 0.6)')}
+                  onBlur={e => (e.target.style.borderColor = '#c8d4d0')}
                 />
               </div>
               <div>
-                <label className="mono" style={{ color: '#64ffda', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>
-                  EMAIL
-                </label>
+                <label className="mono" style={{ color: '#3a9080', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>EMAIL</label>
                 <input
                   type="email"
                   required
@@ -177,14 +158,12 @@ export default function Contact() {
                   onChange={e => setForm({ ...form, email: e.target.value })}
                   style={inputStyle}
                   placeholder="your@email.com"
-                  onFocus={e => (e.target.style.borderColor = 'rgba(100, 255, 218, 0.5)')}
-                  onBlur={e => (e.target.style.borderColor = '#1e293b')}
+                  onFocus={e => (e.target.style.borderColor = 'rgba(74, 168, 152, 0.6)')}
+                  onBlur={e => (e.target.style.borderColor = '#c8d4d0')}
                 />
               </div>
               <div>
-                <label className="mono" style={{ color: '#64ffda', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>
-                  MESSAGE
-                </label>
+                <label className="mono" style={{ color: '#3a9080', fontSize: '0.75rem', display: 'block', marginBottom: '0.4rem' }}>MESSAGE</label>
                 <textarea
                   required
                   value={form.message}
@@ -192,15 +171,15 @@ export default function Contact() {
                   rows={5}
                   style={{ ...inputStyle, resize: 'vertical' }}
                   placeholder="What's on your mind?"
-                  onFocus={e => (e.target.style.borderColor = 'rgba(100, 255, 218, 0.5)')}
-                  onBlur={e => (e.target.style.borderColor = '#1e293b')}
+                  onFocus={e => (e.target.style.borderColor = 'rgba(74, 168, 152, 0.6)')}
+                  onBlur={e => (e.target.style.borderColor = '#c8d4d0')}
                 />
               </div>
               <button
                 type="submit"
                 style={{
-                  background: '#64ffda',
-                  color: '#0d0d0d',
+                  background: '#4aa898',
+                  color: '#f8f5f0',
                   border: 'none',
                   padding: '0.75rem 1.5rem',
                   borderRadius: '4px',

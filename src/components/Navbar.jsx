@@ -32,18 +32,17 @@ export default function Navbar() {
         alignItems: 'center',
         justifyContent: 'space-between',
         transition: 'all 0.3s ease',
-        background: scrolled
-          ? 'rgba(13, 13, 13, 0.95)'
-          : 'transparent',
+        background: scrolled ? 'rgba(240, 236, 226, 0.96)' : 'transparent',
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(100, 255, 218, 0.1)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(74, 168, 152, 0.2)' : 'none',
+        boxShadow: scrolled ? '0 2px 12px rgba(30, 44, 52, 0.07)' : 'none',
       }}
     >
       {/* Logo */}
       <a
         href="#about"
-        className="mono"
-        style={{ color: '#64ffda', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none' }}
+        className="cinzel"
+        style={{ color: '#3a9080', fontSize: '1.1rem', fontWeight: 700, textDecoration: 'none', letterSpacing: '0.05em' }}
       >
         nolen.dev
       </a>
@@ -55,16 +54,16 @@ export default function Navbar() {
             key={link.label}
             href={link.href}
             style={{
-              color: '#94a3b8',
+              color: '#5a7080',
               textDecoration: 'none',
               fontSize: '0.875rem',
               transition: 'color 0.2s',
               fontFamily: "'JetBrains Mono', monospace",
             }}
-            onMouseEnter={e => (e.target.style.color = '#64ffda')}
-            onMouseLeave={e => (e.target.style.color = '#94a3b8')}
+            onMouseEnter={e => (e.target.style.color = '#4aa898')}
+            onMouseLeave={e => (e.target.style.color = '#5a7080')}
           >
-            <span style={{ color: '#64ffda', marginRight: '4px' }}>0{i + 1}.</span>
+            <span style={{ color: '#e88278', marginRight: '4px' }}>0{i + 1}.</span>
             {link.label}
           </a>
         ))}
@@ -73,17 +72,23 @@ export default function Navbar() {
           target="_blank"
           rel="noreferrer"
           style={{
-            color: '#64ffda',
-            border: '1px solid #64ffda',
+            color: '#3a9080',
+            border: '1px solid #4aa898',
             padding: '0.4rem 1rem',
             borderRadius: '4px',
             textDecoration: 'none',
             fontSize: '0.875rem',
             fontFamily: "'JetBrains Mono', monospace",
-            transition: 'background 0.2s',
+            transition: 'background 0.2s, color 0.2s',
           }}
-          onMouseEnter={e => (e.target.style.background = 'rgba(100, 255, 218, 0.1)')}
-          onMouseLeave={e => (e.target.style.background = 'transparent')}
+          onMouseEnter={e => {
+            e.target.style.background = 'rgba(74, 168, 152, 0.1)'
+            e.target.style.color = '#4aa898'
+          }}
+          onMouseLeave={e => {
+            e.target.style.background = 'transparent'
+            e.target.style.color = '#3a9080'
+          }}
         >
           Resume
         </a>
@@ -96,7 +101,7 @@ export default function Navbar() {
           display: 'none',
           background: 'none',
           border: 'none',
-          color: '#64ffda',
+          color: '#4aa898',
           cursor: 'pointer',
           fontSize: '1.5rem',
           padding: '0.5rem',
@@ -117,12 +122,13 @@ export default function Navbar() {
             width: '70vw',
             maxWidth: '300px',
             height: '100vh',
-            background: '#111827',
-            borderLeft: '1px solid rgba(100, 255, 218, 0.15)',
+            background: '#f8f5f0',
+            borderLeft: '1px solid rgba(74, 168, 152, 0.2)',
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5rem',
+            boxShadow: '-4px 0 20px rgba(30, 44, 52, 0.08)',
           }}
         >
           {navLinks.map((link, i) => (
@@ -131,13 +137,13 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMenuOpen(false)}
               style={{
-                color: '#e2e8f0',
+                color: '#1e2c34',
                 textDecoration: 'none',
                 fontSize: '1rem',
                 fontFamily: "'JetBrains Mono', monospace",
               }}
             >
-              <span style={{ color: '#64ffda', marginRight: '8px' }}>0{i + 1}.</span>
+              <span style={{ color: '#e88278', marginRight: '8px' }}>0{i + 1}.</span>
               {link.label}
             </a>
           ))}
