@@ -17,17 +17,34 @@ const projects = [
     github: '#',
   },
   {
-    title: 'Project Coming Soon',
+    title: 'ServiceNow ATF Test Suite',
     description:
-      'More projects are in the works. Check back soon or reach out to learn more about what I\'m currently building.',
-    tags: ['Python', 'C++', 'TBD'],
+      'Built and maintained an Automated Test Framework (ATF) suite within ServiceNow to validate enterprise catalog workflows, record behavior, and system integrations.',
+    tags: ['ServiceNow', 'ATF', 'JavaScript', 'QA Automation', 'ITIL'],
+    status: 'Production',
+  },
+  {
+    title: 'Cipher Encoder / Decoder',
+    description:
+      'C++ cryptography tool with two modes: a key-based cipher that scrambles and unscrambles messages using a user-defined key, and an advanced mode that performs cryptanalysis to recover plaintext without the original key by enumerating all possible keys at a given length.',
+    tags: ['C++', 'Cryptography', 'Cryptanalysis'],
+    status: 'Complete',
+    github: 'https://github.com/nschnab/Cipher',
+  },
+  {
+    title: 'Truck Driver Rewards Program',
+    description:
+      'Architected full-stack implementation of a truck driver rewards program. Front end built with React, back end with javascript, and data stored in Amazon RDS. Production deployment included automated testing pipeline and AWS infrastructure setup.',
+    tags: ['NodeJS', 'JavaScript', 'React', 'AWS', 'Full Stack Development', 'Automated Testing', 'SQL'],
     status: 'In Progress',
+    github: 'https://github.com/DreadGod96/S26-CPSC4910-Team24',
   },
 ]
 
 const statusColors = {
   Production: '#4aa898',
   Live: '#4aa898',
+  Complete: '#5e7d8c',
   'In Progress': '#e88278',
 }
 
@@ -74,12 +91,16 @@ export default function Projects() {
               e.currentTarget.style.boxShadow = 'none'
               e.currentTarget.style.transform = 'translateY(0)'
             }}
+            onClick={() => project.github && project.github !== '#' && window.open(project.github, '_blank')}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <span style={{ color: '#5e7d8c', fontSize: '1.75rem', lineHeight: 1, fontFamily: 'monospace', opacity: 0.6 }}>
                 {'</>'}
               </span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                {project.github && project.github !== '#' && (
+                  <span className="mono" style={{ fontSize: '0.72rem', color: '#4aa898' }}>GitHub ↗</span>
+                )}
                 <span
                   style={{
                     width: '8px',

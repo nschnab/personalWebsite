@@ -5,8 +5,7 @@ const CastleScene = lazy(() => import('./CastleScene'))
 const roles = [
   'Computer Science Student',
   'IT Lead @ Clemson University',
-  'ServiceNow Administrator',
-  'Problem Solver',
+  'ServiceNow Administrator'
 ]
 
 export default function Hero() {
@@ -90,7 +89,7 @@ export default function Hero() {
               letterSpacing: '0.02em',
             }}
           >
-            Nolen C. Schnabel
+            Nolen Schnabel
           </h1>
 
           <h2
@@ -127,7 +126,8 @@ export default function Hero() {
               marginBottom: '2.5rem',
             }}
           >
-            CS student at Clemson University graduating May 2026. I build systems, solve problems, and bridge the gap between technology and the people who use it. Currently leading helpdesk operations and building ServiceNow workflows.
+            <strong>People Leadership:</strong> Lead IT team of 20+ members to provide top-tier support for 15,000+ students and staff<br /><br />
+            <strong>Process Optimization:</strong> Streamlined support workflows, reducing ticket resolution time by 20% - 30% and improving customer satisfaction<br /><br />
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
